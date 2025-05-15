@@ -42,6 +42,10 @@
   z-index: 10;
   padding: 0 20px;
   animation: fadeIn 1.5s ease-in-out;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes fadeIn {
@@ -55,13 +59,52 @@
   }
 }
 
-.content h1 {
-  font-size: 7rem;
-  margin-bottom: 0.5rem;
+/* Стили для динамического поздравления */
+.birthday-message {
+  position: relative;
+  min-height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.birthday-phrase {
+  position: absolute;
+  font-size: 5rem;
   font-weight: 900;
-  letter-spacing: 6px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  letter-spacing: 3px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  text-align: center;
+}
+
+.birthday-phrase.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  animation: pulseBright 2s infinite;
+}
+
+.birthday-phrase.seen {
+  opacity: 0;
+  transform: scale(1.2) translateY(-30px);
+  transition: all 0.5s ease-out;
+}
+
+@keyframes pulseBright {
+  0% {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(233, 30, 99, 0.8), 0 0 40px rgba(233, 30, 99, 0.4);
+  }
+  100% {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  }
 }
 
 .content h2 {
@@ -70,10 +113,26 @@
   font-weight: 400;
   letter-spacing: 3px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorShift 5s infinite;
+}
+
+@keyframes colorShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #e91e63, #9c27b0);
+  background: linear-gradient(135deg, #fd1d1d, #fcb045);
   color: white;
   border: none;
   padding: 16px 40px;
@@ -97,7 +156,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #9c27b0, #e91e63);
+  background: linear-gradient(135deg, #fcb045, #fd1d1d);
   transition: all 0.4s ease;
   z-index: -1;
 }
@@ -140,8 +199,8 @@
 }
 
 @media (max-width: 1024px) {
-  .content h1 {
-    font-size: 5.5rem;
+  .birthday-phrase {
+    font-size: 3.8rem;
   }
 }
 
@@ -158,9 +217,9 @@
     transform: translate(-50%, -50%);
   }
   
-  .content h1 {
-    font-size: 4rem;
-    letter-spacing: 4px;
+  .birthday-phrase {
+    font-size: 2.8rem;
+    padding: 0 15px;
   }
   
   .content h2 {
@@ -180,12 +239,16 @@
     width: 45px;
     height: 45px;
   }
+  
+  .birthday-message {
+    min-height: 12rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .content h1 {
-    font-size: 2.8rem;
-    letter-spacing: 2px;
+  .birthday-phrase {
+    font-size: 2rem;
+    letter-spacing: 1px;
   }
   
   .content h2 {
@@ -202,5 +265,9 @@
   .mute-button {
     width: 40px;
     height: 40px;
+  }
+  
+  .birthday-message {
+    min-height: 9rem;
   }
 } 
