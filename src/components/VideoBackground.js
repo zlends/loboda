@@ -50,7 +50,7 @@ const VideoBackground = () => {
     <div className="video-background">
       <ReactPlayer
         ref={playerRef}
-        // url="https://www.youtube.com/watch?v=r6EJpQCFk3w"
+        url="https://www.youtube.com/watch?v=r6EJpQCFk3w"
         playing={true}
         loop={true}
         muted={muted}
