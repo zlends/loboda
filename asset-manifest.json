@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/loboda/static/css/main.42c7995a.css",
+    "main.js": "/loboda/static/js/main.c994ef29.js",
+    "reactPlayerYouTube.js": "/loboda/static/js/reactPlayerYouTube.81598030.chunk.js",
+    "reactPlayerSoundCloud.js": "/loboda/static/js/reactPlayerSoundCloud.bf40802d.chunk.js",
+    "reactPlayerVimeo.js": "/loboda/static/js/reactPlayerVimeo.2cf6d162.chunk.js",
+    "reactPlayerMux.js": "/loboda/static/js/reactPlayerMux.09cf7e2d.chunk.js",
+    "reactPlayerFacebook.js": "/loboda/static/js/reactPlayerFacebook.6aa30fc8.chunk.js",
+    "reactPlayerStreamable.js": "/loboda/static/js/reactPlayerStreamable.fff0f884.chunk.js",
+    "reactPlayerWistia.js": "/loboda/static/js/reactPlayerWistia.d2b90a94.chunk.js",
+    "reactPlayerTwitch.js": "/loboda/static/js/reactPlayerTwitch.bc57e713.chunk.js",
+    "reactPlayerDailyMotion.js": "/loboda/static/js/reactPlayerDailyMotion.2c4729d5.chunk.js",
+    "reactPlayerMixcloud.js": "/loboda/static/js/reactPlayerMixcloud.a8d2ff8b.chunk.js",
+    "reactPlayerVidyard.js": "/loboda/static/js/reactPlayerVidyard.0c5f7507.chunk.js",
+    "reactPlayerKaltura.js": "/loboda/static/js/reactPlayerKaltura.46f2df11.chunk.js",
+    "reactPlayerFilePlayer.js": "/loboda/static/js/reactPlayerFilePlayer.038523fb.chunk.js",
+    "reactPlayerPreview.js": "/loboda/static/js/reactPlayerPreview.68df765c.chunk.js",
+    "static/js/453.7ddb8f82.chunk.js": "/loboda/static/js/453.7ddb8f82.chunk.js",
+    "index.html": "/loboda/index.html",
+    "main.42c7995a.css.map": "/loboda/static/css/main.42c7995a.css.map",
+    "main.c994ef29.js.map": "/loboda/static/js/main.c994ef29.js.map",
+    "reactPlayerYouTube.81598030.chunk.js.map": "/loboda/static/js/reactPlayerYouTube.81598030.chunk.js.map",
+    "reactPlayerSoundCloud.bf40802d.chunk.js.map": "/loboda/static/js/reactPlayerSoundCloud.bf40802d.chunk.js.map",
+    "reactPlayerVimeo.2cf6d162.chunk.js.map": "/loboda/static/js/reactPlayerVimeo.2cf6d162.chunk.js.map",
+    "reactPlayerMux.09cf7e2d.chunk.js.map": "/loboda/static/js/reactPlayerMux.09cf7e2d.chunk.js.map",
+    "reactPlayerFacebook.6aa30fc8.chunk.js.map": "/loboda/static/js/reactPlayerFacebook.6aa30fc8.chunk.js.map",
+    "reactPlayerStreamable.fff0f884.chunk.js.map": "/loboda/static/js/reactPlayerStreamable.fff0f884.chunk.js.map",
+    "reactPlayerWistia.d2b90a94.chunk.js.map": "/loboda/static/js/reactPlayerWistia.d2b90a94.chunk.js.map",
+    "reactPlayerTwitch.bc57e713.chunk.js.map": "/loboda/static/js/reactPlayerTwitch.bc57e713.chunk.js.map",
+    "reactPlayerDailyMotion.2c4729d5.chunk.js.map": "/loboda/static/js/reactPlayerDailyMotion.2c4729d5.chunk.js.map",
+    "reactPlayerMixcloud.a8d2ff8b.chunk.js.map": "/loboda/static/js/reactPlayerMixcloud.a8d2ff8b.chunk.js.map",
+    "reactPlayerVidyard.0c5f7507.chunk.js.map": "/loboda/static/js/reactPlayerVidyard.0c5f7507.chunk.js.map",
+    "reactPlayerKaltura.46f2df11.chunk.js.map": "/loboda/static/js/reactPlayerKaltura.46f2df11.chunk.js.map",
+    "reactPlayerFilePlayer.038523fb.chunk.js.map": "/loboda/static/js/reactPlayerFilePlayer.038523fb.chunk.js.map",
+    "reactPlayerPreview.68df765c.chunk.js.map": "/loboda/static/js/reactPlayerPreview.68df765c.chunk.js.map",
+    "453.7ddb8f82.chunk.js.map": "/loboda/static/js/453.7ddb8f82.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42c7995a.css",
+    "static/js/main.c994ef29.js"
+  ]
+}
