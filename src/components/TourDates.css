@@ -1,0 +1,94 @@
+.tour-dates {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tour-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tour-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tour-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tour-date {
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-width: 100px;
+}
+
+.tour-location {
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.venue {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.city-country {
+  font-size: 1rem;
+  color: #666;
+}
+
+.buy-tickets-btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.buy-tickets-btn:hover {
+  background-color: #c2185b;
+}
+
+@media (max-width: 768px) {
+  .tour-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .tour-date {
+    font-size: 1.3rem;
+  }
+  
+  .tour-location {
+    padding: 0;
+  }
+  
+  .buy-tickets-btn {
+    align-self: flex-start;
+  }
+} 

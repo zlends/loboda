@@ -1,0 +1,99 @@
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+.content h1 {
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.cta-button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #c2185b;
+}
+
+.mute-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mute-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+  
+  .content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 10px 24px;
+    font-size: 1rem;
+  }
+} 

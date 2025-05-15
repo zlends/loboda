@@ -1,0 +1,48 @@
+.artist-info {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+}
+
+.artist-content {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.artist-bio {
+  flex: 1;
+}
+
+.artist-bio p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.spotify-section {
+  flex: 1;
+}
+
+.spotify-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.spotify-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  .artist-content {
+    flex-direction: column;
+  }
+  
+  .spotify-container {
+    max-width: 100%;
+  }
+} 
