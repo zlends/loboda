@@ -50,10 +50,10 @@ const VideoBackground = () => {
     <div className="video-background">
       <ReactPlayer
         ref={playerRef}
-        url="https://www.youtube.com/watch?v=r6EJpQCFk3w"
+        url="https://www.youtube.com/shorts/SXlKT-Lcw1M"
         playing={true}
         loop={true}
-        muted={muted}
+        muted={false}
         width="100%"
         height="100%"
         config={{
@@ -74,15 +74,7 @@ const VideoBackground = () => {
           <div className="birthday-message">
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+          
             <br/>
             <br/> 
             <br/>
