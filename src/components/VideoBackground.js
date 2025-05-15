@@ -53,7 +53,7 @@ const VideoBackground = () => {
         url="https://www.youtube.com/shorts/SXlKT-Lcw1M"
         playing={true}
         loop={true}
-        muted={false}
+        muted={muted}
         width="100%"
         height="100%"
         config={{
