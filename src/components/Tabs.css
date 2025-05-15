@@ -6,20 +6,34 @@
 
 .tabs {
   display: flex;
-  border-bottom: 2px solid #e0e0e0;
-  margin-bottom: 20px;
+  justify-content: center;
+  border-bottom: none;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.tabs::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: #e0e0e0;
 }
 
 .tab {
   background: none;
   border: none;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  padding: 15px 40px;
+  font-size: 1.3rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
   color: #666;
+  letter-spacing: 1px;
+  z-index: 1;
 }
 
 .tab.active {
@@ -29,11 +43,29 @@
 .tab.active::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
   height: 3px;
-  background-color: #e91e63;
+  background: linear-gradient(to right, #e91e63, #9c27b0);
+  z-index: 2;
+}
+
+.tab::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #e91e63, #9c27b0);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.tab:hover::before {
+  width: 60%;
 }
 
 .tab:hover {
@@ -42,6 +74,18 @@
 
 .tab-content {
   min-height: 400px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -50,7 +94,14 @@
   }
   
   .tab {
-    padding: 12px 20px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab {
+    padding: 10px 15px;
     font-size: 1rem;
   }
 } 

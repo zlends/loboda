@@ -8,69 +8,148 @@
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 40px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, #e91e63, transparent);
+  left: 20%;
 }
 
 .tour-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .tour-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.tour-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: linear-gradient(to bottom, #e91e63, #9c27b0);
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .tour-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tour-item:hover::before {
+  opacity: 1;
 }
 
 .tour-date {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
   min-width: 100px;
+  color: #e91e63;
+  position: relative;
+  padding-left: 15px;
+}
+
+.tour-date::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e91e63;
 }
 
 .tour-location {
   flex-grow: 1;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
 .venue {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   margin-bottom: 5px;
+  color: #333;
 }
 
 .city-country {
   font-size: 1rem;
   color: #666;
+  font-weight: 500;
 }
 
 .buy-tickets-btn {
-  background-color: #e91e63;
+  background: linear-gradient(135deg, #e91e63, #9c27b0);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 1rem;
-  font-weight: 600;
-  border-radius: 4px;
+  font-weight: 700;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.buy-tickets-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #9c27b0, #e91e63);
+  transition: all 0.4s ease;
+  z-index: -1;
 }
 
 .buy-tickets-btn:hover {
-  background-color: #c2185b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+}
+
+.buy-tickets-btn:hover::before {
+  left: 0;
+}
+
+.buy-tickets-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -78,6 +157,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+    padding: 20px;
   }
   
   .tour-date {
@@ -88,7 +168,43 @@
     padding: 0;
   }
   
+  .venue {
+    font-size: 1.2rem;
+  }
+  
   .buy-tickets-btn {
-    align-self: flex-start;
+    align-self: stretch;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tour-item {
+    padding: 15px;
+  }
+  
+  .tour-date {
+    font-size: 1.2rem;
+  }
+  
+  .venue {
+    font-size: 1.1rem;
+  }
+  
+  .city-country {
+    font-size: 0.9rem;
+  }
+  
+  .buy-tickets-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
   }
 } 
