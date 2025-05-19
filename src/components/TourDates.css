@@ -4,22 +4,93 @@
   margin: 0 auto;
 }
 
+.poster-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.poster-images {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.poster-container {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.poster-tape {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  width: 70px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 0.8;
+  z-index: 3;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.poster-container:nth-child(2) .poster-tape {
+  transform: translateX(-50%) rotate(5deg);
+}
+
+.poster-image {
+  width: 280px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  position: relative;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+
+.poster-image.poster-dark {
+  transform: rotate(-5deg);
+}
+
+.poster-image.poster-red {
+  transform: rotate(5deg);
+}
+
+.poster-container:hover {
+  transform: translateY(-10px);
+}
+
+.poster-subtitle {
+  color: #777;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
 .section-title {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-weight: 800;
   letter-spacing: 2px;
   position: relative;
   display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: 0;
   width: 60%;
   height: 4px;
@@ -30,7 +101,7 @@
 .tour-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 }
 
 .tour-item {
@@ -41,9 +112,32 @@
   background-color: #fff;
   border-radius: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  z-index: 1;
+}
+
+.dark-poster {
+  background-image: url("../assets/images/LO_foto_dark.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.red-poster {
+  background-image: url("../assets/images/LO_foto_red.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.poster-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.93);
+  z-index: -1;
 }
 
 .tour-item::before {
@@ -52,28 +146,38 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 5px;
+  width: 8px;
   background: linear-gradient(to bottom, #e91e63, #9c27b0);
-  opacity: 0;
   transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.tour-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e91e63' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 20L20 0 40 20 20 40z' /%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .tour-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.tour-item:hover::before {
-  opacity: 1;
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .tour-date {
   font-size: 1.5rem;
   font-weight: 800;
-  min-width: 100px;
+  min-width: 120px;
   color: #e91e63;
   position: relative;
   padding-left: 15px;
+  z-index: 2;
 }
 
 .tour-date::before {
@@ -91,6 +195,7 @@
 .tour-location {
   flex-grow: 1;
   padding: 0 25px;
+  z-index: 2;
 }
 
 .venue {
@@ -123,7 +228,7 @@
   box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
 }
 
 .buy-tickets-btn::before {
@@ -183,7 +288,31 @@
   pointer-events: none;
 }
 
+@media (max-width: 992px) {
+  .poster-images {
+    gap: 30px;
+  }
+  
+  .poster-image {
+    width: 240px;
+  }
+}
+
 @media (max-width: 768px) {
+  .poster-images {
+    gap: 20px;
+  }
+  
+  .poster-image {
+    width: 180px;
+  }
+  
+  .poster-tape {
+    width: 50px;
+    height: 25px;
+    top: -15px;
+  }
+  
   .tour-item {
     flex-direction: column;
     align-items: flex-start;
@@ -218,7 +347,37 @@
   }
 }
 
+@media (max-width: 576px) {
+  .poster-subtitle {
+    font-size: 1rem;
+    margin-top: -15px;
+  }
+}
+
 @media (max-width: 480px) {
+  .poster-header {
+    margin-bottom: 30px;
+  }
+  
+  .poster-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .poster-image {
+    width: 220px;
+  }
+  
+  .poster-container {
+    margin-bottom: 10px;
+  }
+  
+  .poster-tape {
+    width: 60px;
+    height: 25px;
+  }
+  
   .tour-item {
     padding: 15px;
   }
@@ -242,5 +401,6 @@
   
   .section-title {
     font-size: 1.8rem;
+    margin-bottom: 5px;
   }
 } 

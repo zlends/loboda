@@ -1,5 +1,7 @@
 import React from 'react';
 import './TourDates.css';
+import darkPoster from '../assets/images/LO_foto_dark.jpg';
+import redPoster from '../assets/images/LO_foto_red.jpg';
 
 const TourDates = () => {
   const tourDates = [
@@ -71,10 +73,25 @@ const TourDates = () => {
 
   return (
     <div className="tour-dates" id="tour-dates">
-      <h2 className="section-title">TOUR DATES</h2>
+      <div className="poster-header">
+        <div className="poster-images">
+          <div className="poster-container">
+            <div className="poster-tape"></div>
+            <img src={darkPoster} alt="LOBODA Tour 2025 Poster" className="poster-image poster-dark" />
+          </div>
+          <div className="poster-container">
+            <div className="poster-tape"></div>
+            <img src={redPoster} alt="LOBODA Tour 2025 Poster" className="poster-image poster-red" />
+          </div>
+        </div>
+        <h2 className="section-title">TOUR DATES</h2>
+        <p className="poster-subtitle">Official Tour 2025</p>
+      </div>
+      
       <div className="tour-list">
         {tourDates.map((tour, index) => (
-          <div key={index} className="tour-item">
+          <div key={index} className={`tour-item ${index % 2 === 0 ? 'dark-poster' : 'red-poster'}`}>
+            <div className="poster-overlay"></div>
             <div className="tour-date">{tour.date}</div>
             <div className="tour-location">
               <div className="venue">{tour.venue}</div>
