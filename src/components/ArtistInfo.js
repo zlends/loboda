@@ -11,6 +11,13 @@ const ArtistInfo = () => {
   
   const [isLoading, setIsLoading] = useState(true);
   
+  const youtubeVideos = [
+    '6gCbAkqMKYg', // LOBODA - VOSKRESENIE
+    'gjScw5ZlZMs', // LOBODA - NEBO ZNAET
+    'tvoi-glaza', // Tvoi glaza
+    'instinkt'    // INSTINKT
+  ];
+  
   useEffect(() => {
     // Fetch artist stats from Spotify API
     const fetchArtistStats = async () => {
@@ -73,6 +80,23 @@ const ArtistInfo = () => {
               "My music is about freedom, power, and breaking boundaries."
             </blockquote>
             <cite>— LOBODA</cite>
+          </div>
+        </div>
+        
+        <div className="videos-section">
+          <h3>OFFICIAL VIDEOS</h3>
+          <div className="videos-container">
+            {youtubeVideos.slice(0, 2).map((videoId, index) => (
+              <div key={index} className="youtube-embed">
+                <iframe
+                  src={`https://www.youtube.com/embed/${videoId}`}
+                  title={`LOBODA YouTube Video ${index + 1}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ))}
           </div>
         </div>
         
