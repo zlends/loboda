@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import './VideoBackground.css';
+import videoFile from '../assets/videos/LOBODA_FullHD.mp4';
 
 const VideoBackground = () => {
   const [muted, setMuted] = useState(true);
@@ -20,24 +21,15 @@ const VideoBackground = () => {
     <div className="video-background">
       <ReactPlayer
         ref={playerRef}
-        url="https://www.youtube.com/watch?v=r6EJpQCFk3w"
+        className="react-player"
+        url={videoFile}
         playing={true}
         loop={true}
         muted={muted}
         width="100%"
         height="100%"
-        config={{
-          youtube: {
-            playerVars: {
-              controls: 0,
-              showinfo: 0,
-              rel: 0,
-              iv_load_policy: 3,
-              modestbranding: 1,
-              playsinline: 1
-            }
-          }
-        }}
+        playsinline={true}
+        controls={false}
       />
       <div className="overlay">
         <div className="content">

@@ -1,76 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ArtistInfo.css';
 
 const ArtistInfo = () => {
-  const achievements = [
+  const [artistStats, setArtistStats] = useState([
     { number: '15M+', label: 'Monthly Listeners' },
     { number: '20+', label: 'Platinum Singles' },
     { number: '5', label: 'Sold-out Tours' },
     { number: '12', label: 'Music Awards' }
-  ];
+  ]);
   
-  const featuredVideos = [
-    {
-      id: 1,
-      title: 'SuperStar',
-      thumbnail: 'https://i.ytimg.com/vi/r6EJpQCFk3w/maxresdefault.jpg',
-      views: '24M views'
-    },
-    {
-      id: 2,
-      title: 'Instadrama',
-      thumbnail: 'https://i.ytimg.com/vi/r6EJpQCFk3w/maxresdefault.jpg',
-      views: '18M views'
-    },
-    {
-      id: 3,
-      title: 'Boom Boom',
-      thumbnail: 'https://i.ytimg.com/vi/r6EJpQCFk3w/maxresdefault.jpg',
-      views: '31M views'
-    }
-  ];
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    // Fetch artist stats from Spotify API
+    const fetchArtistStats = async () => {
+      try {
+        setIsLoading(true);
+        
+        // Loboda's Spotify artist ID
+        const artistId = '59oe7CAquFZ5mNjQ1efKPN';
+        
+        // Using the public proxy to avoid CORS issues for demo purposes
+        // In production, this should be handled by your backend
+        const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://open.spotify.com/artist/${artistId}`)}`);
+        const data = await response.json();
+        
+        if (data && data.contents) {
+          // Parse the response to extract relevant information
+          // This is a simplified example - in a real app, use the official Spotify API with auth
+          const content = data.contents;
+          
+          // Extract monthly listeners count
+          const listenersMatch = content.match(/"followers":{"total":(\d+)}/);
+          const monthlyListeners = listenersMatch ? parseInt(listenersMatch[1]).toLocaleString() : '15M+';
+          
+          // Update stats with real data when available
+          setArtistStats([
+            { number: monthlyListeners, label: 'Monthly Listeners' },
+            { number: '20+', label: 'Platinum Singles' },
+            { number: '5', label: 'Sold-out Tours' },
+            { number: '12', label: 'Music Awards' }
+          ]);
+        }
+      } catch (error) {
+        console.error('Error fetching artist stats:', error);
+        // Keep default stats on error
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    fetchArtistStats();
+  }, []);
 
   return (
     <div className="artist-info">
       <h2 className="section-title">ARTIST INFO</h2>
       
       <div className="artist-stats">
-        {achievements.map((item, index) => (
+        {artistStats.map((item, index) => (
           <div key={index} className="stat-item">
-            <div className="stat-number">{item.number}</div>
+            <div className="stat-number">{isLoading ? '...' : item.number}</div>
             <div className="stat-label">{item.label}</div>
           </div>
         ))}
       </div>
       
-      <div className="artist-content">
+      <div className="artist-content full-width">
         <div className="artist-bio">
           <div className="bio-quote">
             <blockquote>
               "My music is about freedom, power, and breaking boundaries."
             </blockquote>
             <cite>— LOBODA</cite>
-          </div>
-          
-          <div className="featured-videos">
-            <h3>FEATURED VIDEOS</h3>
-            <div className="video-grid">
-              {featuredVideos.map(video => (
-                <div key={video.id} className="video-card">
-                  <div className="video-thumbnail">
-                    <img src={video.thumbnail} alt={video.title} />
-                    <div className="play-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <h4>{video.title}</h4>
-                  <span>{video.views}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
         
