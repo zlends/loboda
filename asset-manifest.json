@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/loboda/static/css/main.42c7995a.css",
-    "main.js": "/loboda/static/js/main.4d2539e0.js",
+    "main.css": "/loboda/static/css/main.f41b6007.css",
+    "main.js": "/loboda/static/js/main.34d3ec4d.js",
     "reactPlayerYouTube.js": "/loboda/static/js/reactPlayerYouTube.81598030.chunk.js",
     "reactPlayerSoundCloud.js": "/loboda/static/js/reactPlayerSoundCloud.bf40802d.chunk.js",
     "reactPlayerVimeo.js": "/loboda/static/js/reactPlayerVimeo.2cf6d162.chunk.js",
@@ -17,9 +17,10 @@
     "reactPlayerFilePlayer.js": "/loboda/static/js/reactPlayerFilePlayer.038523fb.chunk.js",
     "reactPlayerPreview.js": "/loboda/static/js/reactPlayerPreview.68df765c.chunk.js",
     "static/js/453.7ddb8f82.chunk.js": "/loboda/static/js/453.7ddb8f82.chunk.js",
+    "static/media/LOBODA_FullHD.mp4": "/loboda/static/media/LOBODA_FullHD.2c2ca41401a6f2fd46e4.mp4",
     "index.html": "/loboda/index.html",
-    "main.42c7995a.css.map": "/loboda/static/css/main.42c7995a.css.map",
-    "main.4d2539e0.js.map": "/loboda/static/js/main.4d2539e0.js.map",
+    "main.f41b6007.css.map": "/loboda/static/css/main.f41b6007.css.map",
+    "main.34d3ec4d.js.map": "/loboda/static/js/main.34d3ec4d.js.map",
     "reactPlayerYouTube.81598030.chunk.js.map": "/loboda/static/js/reactPlayerYouTube.81598030.chunk.js.map",
     "reactPlayerSoundCloud.bf40802d.chunk.js.map": "/loboda/static/js/reactPlayerSoundCloud.bf40802d.chunk.js.map",
     "reactPlayerVimeo.2cf6d162.chunk.js.map": "/loboda/static/js/reactPlayerVimeo.2cf6d162.chunk.js.map",
@@ -37,7 +38,7 @@
     "453.7ddb8f82.chunk.js.map": "/loboda/static/js/453.7ddb8f82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.42c7995a.css",
-    "static/js/main.4d2539e0.js"
+    "static/css/main.f41b6007.css",
+    "static/js/main.34d3ec4d.js"
   ]
 }
