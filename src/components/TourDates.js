@@ -4,73 +4,59 @@ import './TourDates.css';
 const TourDates = () => {
   const tourDates = [
     {
-      date: 'May 15',
-      city: 'Prague',
-      country: 'CZECH REPUBLIC',
-      venue: 'O2 Arena',
+      date: 'Oct 15, 2025',
+      city: 'Tel-Aviv',
+      country: 'ISRAEL',
+      venue: 'Bronfman Auditorium',
       ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
     },
     {
-      date: 'May 18',
-      city: 'Berlin',
+      date: 'Oct 16, 2025',
+      city: 'Haifa',
+      country: 'ISRAEL',
+      venue: 'Haifa Congress Center',
+      ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
+    },
+    {
+      date: 'Nov 13, 2025',
+      city: 'Hamburg',
       country: 'GERMANY',
-      venue: 'Mercedes-Benz Arena',
+      venue: 'Inselpark Arena',
       ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
     },
     {
-      date: 'May 21',
-      city: 'Paris',
-      country: 'FRANCE',
-      venue: 'Accor Arena',
+      date: 'Nov 16, 2025',
+      city: 'Munich',
+      country: 'GERMANY',
+      venue: 'Tonhalle',
       ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
     },
     {
-      date: 'May 24',
-      city: 'Madrid',
-      country: 'SPAIN',
-      venue: 'WiZink Center',
-      ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
-    },
-    {
-      date: 'May 27',
-      city: 'Milan',
-      country: 'ITALY',
-      venue: 'Mediolanum Forum',
-      ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
-    },
-    {
-      date: 'May 30',
+      date: 'Nov 17, 2025',
       city: 'Amsterdam',
       country: 'NETHERLANDS',
-      venue: 'Ziggo Dome',
+      venue: 'Afas live',
       ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
     },
     {
-      date: 'Jun 2',
-      city: 'London',
-      country: 'UNITED KINGDOM',
-      venue: 'The O2',
+      date: 'Nov 18, 2025',
+      city: 'Dusseldorf',
+      country: 'GERMANY',
+      venue: 'Mitsubishi Electric Hall',
       ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
     },
     {
-      date: 'Jun 5',
-      city: 'Stockholm',
-      country: 'SWEDEN',
-      venue: 'Avicii Arena',
+      date: 'Nov 26, 2025',
+      city: 'Berlin',
+      country: 'GERMANY',
+      venue: 'Tempodrom',
       ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
     },
     {
-      date: 'Jun 8',
-      city: 'Helsinki',
-      country: 'FINLAND',
-      venue: 'Helsinki Ice Hall',
-      ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
-    },
-    {
-      date: 'Jun 11',
-      city: 'Warsaw',
-      country: 'POLAND',
-      venue: 'COS Torwar',
+      date: 'Nov 27, 2025',
+      city: 'Offenbach',
+      country: 'GERMANY',
+      venue: 'Stadthalle',
       ticketLink: 'https://fca.mticket.eu/widget540site12853/widget/event/134683'
     }
   ];
