@@ -1,7 +1,7 @@
 import React from 'react';
 import './TourDates.css';
-import darkPoster from '../assets/images/LO_foto_dark.jpg';
-import redPoster from '../assets/images/LO_foto_red.jpg';
+import darkPoster from '../assets/images/LO_POSTER_dark.jpg';
+import redPoster from '../assets/images/LO_POSTER_red.jpg';
 
 const TourDates = () => {
   const tourDates = [
