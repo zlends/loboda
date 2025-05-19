@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import TourDates from './TourDates';
 import ArtistInfo from './ArtistInfo';
 import './Tabs.css';
+import { TabContext } from '../App';
 
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('tourDates');
+  const { activeTab, setActiveTab } = useContext(TabContext);
 
   return (
-    <div className="tabs-container">
+    <div className="tabs-container" id="tabs-section">
       <div className="tabs">
         <button 
           className={`tab ${activeTab === 'tourDates' ? 'active' : ''}`}

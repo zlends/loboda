@@ -62,7 +62,7 @@ const TourDates = () => {
   ];
 
   return (
-    <div className="tour-dates">
+    <div className="tour-dates" id="tour-dates">
       <h2 className="section-title">TOUR DATES</h2>
       <div className="tour-list">
         {tourDates.map((tour, index) => (

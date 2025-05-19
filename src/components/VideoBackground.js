@@ -1,11 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import ReactPlayer from 'react-player';
 import './VideoBackground.css';
 import videoFile from '../assets/videos/LOBODA_FullHD.mp4';
+import { TabContext } from '../App';
 
 const VideoBackground = () => {
   const [muted, setMuted] = useState(true);
   const playerRef = useRef(null);
+  const { setActiveTab } = useContext(TabContext);
 
   const toggleMute = () => {
     console.log("Toggle mute clicked, current state:", muted);
@@ -16,6 +18,44 @@ const VideoBackground = () => {
   useEffect(() => {
     console.log("Muted state changed to:", muted);
   }, [muted]);
+  
+  const scrollToTourDates = (e) => {
+    // Prevent any default behavior
+    e.preventDefault();
+    
+    console.log("BUY TICKETS button clicked");
+    
+    // Ensure the tour dates tab is active
+    setActiveTab('tourDates');
+    
+    // Wait a bit for the tab content to render
+    setTimeout(() => {
+      // Try to find the tour dates element
+      const tourDatesElement = document.getElementById('tour-dates');
+      
+      // If tour dates element is found, scroll to it
+      if (tourDatesElement) {
+        console.log("Scrolling to tour dates");
+        tourDatesElement.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      } 
+      // Otherwise try to find the tabs section
+      else {
+        console.log("Tour dates element not found, trying tabs section");
+        const tabsSection = document.getElementById('tabs-section');
+        if (tabsSection) {
+          tabsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        } else {
+          console.error("Neither tour dates nor tabs section found");
+        }
+      }
+    }, 300);
+  };
 
   return (
     <div className="video-background">
@@ -35,7 +75,15 @@ const VideoBackground = () => {
         <div className="content">
           <h1>LOBODA</h1>
           <h2>EUROPEAN TOUR 2025</h2>
-          <button className="cta-button pulse">BUY TICKETS</button>
+          <button 
+            className="cta-button pulse" 
+            onClick={scrollToTourDates}
+            role="button"
+            tabIndex={0}
+            title="Scroll to Tour Dates"
+          >
+            BUY TICKETS
+          </button>
         </div>
         <div 
           className="mute-button" 
