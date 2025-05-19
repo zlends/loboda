@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 :root {
   --primary: #e91e63;
   --secondary: #9c27b0;
@@ -19,13 +25,16 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: #fff;
-  overflow-x: hidden;
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-section {
