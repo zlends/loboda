@@ -81,9 +81,9 @@ const TourDates = () => {
               <div className="city-country">{tour.city}, {tour.country}</div>
             </div>
             {tour.ticketsAvailable ? (
-              <a href={tour.ticketLink} target="_blank" rel="noopener noreferrer" className="buy-tickets-btn">
-                Buy Tickets
-              </a>
+            <a href={tour.ticketLink} target="_blank" rel="noopener noreferrer" className="buy-tickets-btn">
+              Buy Tickets
+            </a>
             ) : (
               <span className="buy-tickets-btn disabled" title="Tickets will be available soon">
                 Coming Soon

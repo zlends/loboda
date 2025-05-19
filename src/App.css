@@ -38,8 +38,9 @@ body {
 }
 
 .hero-section {
-  height: calc(100vh - 73px); /* 73px - высота хедера с границей */
+  height: calc(100vh - 73px); /* Account for header height with border */
   position: relative;
+  overflow: hidden;
 }
 
 .content-section {

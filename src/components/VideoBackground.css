@@ -155,31 +155,49 @@
 
 .mute-button {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  width: 50px;
-  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(40%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
-  z-index: 100;
+  z-index: 20;
   pointer-events: auto;
   -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .mute-button:hover {
-  background: rgba(0, 0, 0, 0.8);
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(40%, -50%) scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.mute-button svg {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  width: 32px;
+  height: 32px;
 }
 
 @media (max-width: 1024px) {
   .content h1 {
     font-size: 5.5rem;
+  }
+  
+  .mute-button {
+    transform: translate(40%, -50%);
+  }
+  
+  .mute-button:hover {
+    transform: translate(40%, -50%) scale(1.1);
   }
 }
 
@@ -219,10 +237,25 @@
   }
   
   .mute-button {
-    bottom: 20px;
+    position: absolute;
+    bottom: 100px;
     right: 20px;
-    width: 45px;
-    height: 45px;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .mute-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .mute-button svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -248,15 +281,24 @@
   }
   
   .mute-button {
-    width: 40px;
-    height: 40px;
+    bottom: 90px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .mute-button svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
 @media (max-width: 375px) {
   .mute-button {
-    bottom: 10px;
-    right: 10px;
+    bottom: 80px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
   }
 }
 
@@ -284,13 +326,6 @@
     font-size: 1.3rem;
     letter-spacing: 1px;
     margin-bottom: 1.8rem;
-  }
-  
-  .mute-button {
-    bottom: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
   }
 }
 
@@ -360,5 +395,23 @@
   .content h2 {
     font-size: 1.1rem;
     letter-spacing: 1px;
+  }
+  
+  .mute-button {
+    bottom: 85px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
+  }
+  
+  .mute-button:hover,
+  .mute-button:active {
+    opacity: 1;
+  }
+  
+  .mute-button svg {
+    width: 16px;
+    height: 16px;
   }
 } 
