@@ -66,7 +66,7 @@
 }
 
 .content {
-  text-align: right;
+  text-align: left;
   color: white;
   z-index: 20;
   padding: 0 40px;
@@ -76,7 +76,7 @@
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 @keyframes fadeIn {
@@ -157,7 +157,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(40%, -50%);
+  transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.2);
   border: 2px solid rgba(255, 255, 255, 0.8);
   width: 80px;
@@ -177,7 +177,7 @@
 
 .mute-button:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: translate(40%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
@@ -193,11 +193,11 @@
   }
   
   .mute-button {
-    transform: translate(40%, -50%);
+    transform: translate(-50%, -50%);
   }
   
   .mute-button:hover {
-    transform: translate(40%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
   }
 }
 
@@ -218,6 +218,8 @@
   
   .content {
     padding: 0 30px;
+    align-items: center;
+    text-align: center;
   }
   
   .content h1 {
@@ -238,7 +240,7 @@
   
   .mute-button {
     position: absolute;
-    bottom: 100px;
+    bottom: 150px;
     right: 20px;
     top: auto;
     left: auto;
@@ -281,7 +283,7 @@
   }
   
   .mute-button {
-    bottom: 90px;
+    bottom: 140px;
     right: 15px;
     width: 50px;
     height: 50px;
@@ -295,7 +297,7 @@
 
 @media (max-width: 375px) {
   .mute-button {
-    bottom: 80px;
+    bottom: 130px;
     right: 15px;
     width: 45px;
     height: 45px;
@@ -378,12 +380,12 @@
   
   .overlay {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
   }
   
   .content {
-    padding-right: 25px;
+    padding: 0 25px;
     width: 100%;
   }
   
@@ -398,7 +400,7 @@
   }
   
   .mute-button {
-    bottom: 85px;
+    bottom: 140px;
     right: 15px;
     width: 50px;
     height: 50px;
