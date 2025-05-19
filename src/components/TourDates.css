@@ -25,6 +25,7 @@
   position: relative;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .poster-tape {
@@ -288,6 +289,109 @@
   pointer-events: none;
 }
 
+.poster-zoom-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+  color: white;
+}
+
+.poster-container:hover .poster-zoom-hint {
+  opacity: 1;
+}
+
+.poster-zoom-hint svg {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Fullscreen Poster Modal */
+.fullscreen-poster-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.fullscreen-poster-container {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  animation: scaleIn 0.3s ease-in-out;
+}
+
+.fullscreen-poster-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.close-poster-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.close-poster-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.close-poster-btn:focus {
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 992px) {
   .poster-images {
     gap: 30px;
@@ -344,6 +448,15 @@
   
   .section-title {
     font-size: 2.2rem;
+  }
+  
+  .fullscreen-poster-image {
+    max-height: 80vh;
+  }
+  
+  .close-poster-btn {
+    top: -50px;
+    right: 0;
   }
 }
 
