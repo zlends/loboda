@@ -79,7 +79,7 @@ const ArtistInfo = () => {
           <div className="spotify-container">
             <iframe 
               title="Spotify Embed: LOBODA"
-              src="https://open.spotify.com/embed/artist/0CbeG1224FS58EUx4tPDrP?utm_source=generator&theme=0" 
+              src="https://open.spotify.com/embed/artist/59oe7CAquFZ5mNjQ1efKPN?utm_source=generator&theme=0" 
               width="100%" 
               height="352" 
               frameBorder="0" 

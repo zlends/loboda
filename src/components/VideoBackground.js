@@ -4,42 +4,12 @@ import './VideoBackground.css';
 
 const VideoBackground = () => {
   const [muted, setMuted] = useState(true);
-  const [textIndex, setTextIndex] = useState(0);
   const playerRef = useRef(null);
-  
-  const birthdayPhrases = [
-    "ЭЙ, БОГДАН!",
-    "НА МИНУТОЧКУ...",
-    "БРАТАН, С ДНЮХОЙ ТЕБЯ!",
-    "32 ЛЕТ — ЭТО УЖЕ...",
-    "ПОЧТИ КАК 40, ТОЛЬКО ПОКА ЕЩЁ НОРМ!",
-    "В ТВОЁМ ВОЗРАСТЕ...",
-    "УЖЕ ПОРА БЫ ПЕРЕСТАТЬ...",
-    "СПИСЫВАТЬ СЕДИНУ НА МУДРОСТЬ!",
-    "КРИЗИС СРЕДНЕГО ВОЗРАСТА...",
-    "ЭТО КОГДА ПИВНОЙ ЖИВОТ",
-    "НАЗЫВАЕШЬ ПИВНЫМ ОПЫТОМ!",
-    "НО ТЫ ЕЩЁ НИЧЕГО!",
-    "ДЛЯ СВОЕГО ВОЗРАСТА",
-    "ЧЕРТОВСКИ ХОРОШ!",
-    "С ДНЁМ РОЖДЕНИЯ, КОБАНЯРА!"
-  ];
 
   const toggleMute = () => {
     console.log("Toggle mute clicked, current state:", muted);
     setMuted(!muted);
   };
-
-  // Эффект для смены текста каждые несколько секунд
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTextIndex((prevIndex) => 
-        prevIndex < birthdayPhrases.length - 1 ? prevIndex + 1 : 0
-      );
-    }, 2500);
-    
-    return () => clearTimeout(timer);
-  }, [textIndex, birthdayPhrases.length]);
 
   // Debug to verify state changes
   useEffect(() => {
@@ -50,7 +20,7 @@ const VideoBackground = () => {
     <div className="video-background">
       <ReactPlayer
         ref={playerRef}
-        url="https://www.youtube.com/shorts/SXlKT-Lcw1M"
+        url="https://www.youtube.com/watch?v=r6EJpQCFk3w"
         playing={true}
         loop={true}
         muted={muted}
@@ -71,30 +41,9 @@ const VideoBackground = () => {
       />
       <div className="overlay">
         <div className="content">
-          <div className="birthday-message">
-            <br/>
-            <br/>
-          
-            <br/>
-            <br/> 
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            {birthdayPhrases.map((phrase, index) => (
-              <h1 
-                key={index} 
-                className={`birthday-phrase ${index === textIndex ? 'active' : ''} ${index < textIndex ? 'seen' : ''}`}
-              >
-                {phrase}
-              </h1>
-            ))}
-          </div>
-          <h2>ВЕЛИЧАЙШЕМУ ИЗ МУЖИКОВ</h2>
-          <button className="cta-button pulse">ОТМЕТИТЬ ВМЕСТЕ!</button>
+          <h1>LOBODA</h1>
+          <h2>EUROPEAN TOUR 2025</h2>
+          <button className="cta-button pulse">BUY TICKETS</button>
         </div>
         <div 
           className="mute-button" 
