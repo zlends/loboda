@@ -70,6 +70,19 @@ const VideoBackground = () => {
         height="100%"
         playsinline={true}
         controls={false}
+        config={{
+          file: {
+            attributes: {
+              style: {
+                objectFit: 'cover',
+                objectPosition: 'center',
+                width: '100%',
+                height: '100%'
+              },
+              playsInline: true
+            }
+          }
+        }}
       />
       <div className="overlay">
         <div className="content">

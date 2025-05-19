@@ -282,4 +282,58 @@
     width: 40px;
     height: 40px;
   }
+}
+
+/* Специальный фикс для Safari на iOS */
+@supports (-webkit-touch-callout: none) {
+  .video-background .react-player {
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    height: 100% !important;
+    width: auto !important;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  .video-background video {
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    height: auto !important;
+    width: 100% !important;
+    min-height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* iPhone специфичные стили */
+@media (max-width: 428px) and (-webkit-min-device-pixel-ratio: 2) { 
+  .video-background .react-player {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: auto !important;
+    height: 100% !important;
+    min-height: 100vh;
+  }
+  
+  .video-background video {
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: auto !important;
+    height: 100% !important;
+    object-fit: cover;
+    min-width: 100%;
+  }
+  
+  .overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 } 
