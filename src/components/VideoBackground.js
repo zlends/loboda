@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import ReactPlayer from 'react-player';
 import './VideoBackground.css';
-import videoFile from '../assets/videos/LOBODA_FullHD.mp4';
+import videoFile from '../assets/videos/LOBODA_FullHD_sound.mp4';
 import { TabContext } from '../App';
 
 const VideoBackground = () => {
