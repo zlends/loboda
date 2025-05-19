@@ -87,7 +87,7 @@ const VideoBackground = () => {
       <div className="overlay">
         <div className="content">
           <h1>LOBODA</h1>
-          <h2>EUROPEAN TOUR 2025</h2>
+          <h2>TOUR 2025</h2>
           <button 
             className="cta-button pulse" 
             onClick={scrollToTourDates}

@@ -55,7 +55,7 @@
   width: 100%;
   height: 100%;
   max-width: 100vw;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+  background: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,14 +66,17 @@
 }
 
 .content {
-  text-align: center;
+  text-align: right;
   color: white;
   z-index: 20;
-  padding: 0 20px;
+  padding: 0 40px;
   animation: fadeIn 1.5s ease-in-out;
   pointer-events: auto;
   width: 100%;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 @keyframes fadeIn {
@@ -88,39 +91,40 @@
 }
 
 .content h1 {
-  font-size: 7rem;
-  margin-bottom: 0.5rem;
+  font-size: 5.5rem;
+  margin-bottom: 0.2rem;
   font-weight: 900;
   letter-spacing: 6px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
   text-transform: uppercase;
 }
 
 .content h2 {
-  font-size: 2.2rem;
-  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
   font-weight: 400;
   letter-spacing: 3px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
 
 .cta-button {
   background: linear-gradient(135deg, #e91e63, #9c27b0);
   color: white;
   border: none;
-  padding: 16px 40px;
-  font-size: 1.3rem;
+  padding: 14px 35px;
+  font-size: 1.1rem;
   font-weight: 700;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 2px;
-  box-shadow: 0 4px 20px rgba(233, 30, 99, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(233, 30, 99, 0.6);
   position: relative;
   overflow: hidden;
   z-index: 20;
   pointer-events: auto;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button:before {
@@ -137,7 +141,7 @@
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(233, 30, 99, 0.7);
 }
 
 .cta-button:hover:before {
@@ -194,20 +198,24 @@
     object-fit: cover;
   }
   
+  .content {
+    padding: 0 30px;
+  }
+  
   .content h1 {
-    font-size: 4rem;
-    letter-spacing: 4px;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
   }
   
   .content h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     letter-spacing: 2px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.8rem;
   }
   
   .cta-button {
-    padding: 14px 35px;
-    font-size: 1.1rem;
+    padding: 12px 30px;
+    font-size: 1rem;
   }
   
   .mute-button {
@@ -219,25 +227,27 @@
 }
 
 @media (max-width: 480px) {
+  .content {
+    padding: 0 20px;
+  }
+  
   .content h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     letter-spacing: 2px;
   }
   
   .content h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .cta-button {
-    padding: 12px 30px;
-    font-size: 1rem;
+    padding: 10px 25px;
+    font-size: 0.9rem;
   }
   
   .mute-button {
-    bottom: 15px;
-    right: 15px;
     width: 40px;
     height: 40px;
   }
@@ -333,7 +343,22 @@
   
   .overlay {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+  }
+  
+  .content {
+    padding-right: 25px;
+    width: 100%;
+  }
+  
+  .content h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+  
+  .content h2 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
   }
 } 
