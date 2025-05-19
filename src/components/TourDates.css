@@ -152,6 +152,37 @@
   box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
 }
 
+.buy-tickets-btn.disabled {
+  background: linear-gradient(135deg, #b0b0b0, #8a8a8a);
+  cursor: not-allowed;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  opacity: 0.7;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy-tickets-btn.disabled::before {
+  display: none;
+}
+
+.buy-tickets-btn.disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.buy-tickets-btn.disabled::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
 @media (max-width: 768px) {
   .tour-item {
     flex-direction: column;
@@ -173,6 +204,11 @@
   }
   
   .buy-tickets-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+  
+  .buy-tickets-btn.disabled {
     align-self: stretch;
     text-align: center;
   }
