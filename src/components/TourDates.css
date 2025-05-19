@@ -120,13 +120,13 @@
 }
 
 .dark-poster {
-  background-image: url("../assets/images/LO_POSTER_dark.jpg");
+  background-image: url("../assets/images/LO_foto_dark.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .red-poster {
-  background-image: url("../assets/images/LO_POSTER_red.jpg");
+  background-image: url("../assets/images/LO_foto_red.jpg");
   background-size: cover;
   background-position: center;
 }
