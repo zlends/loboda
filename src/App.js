@@ -13,18 +13,18 @@ function App() {
   
   return (
     <TabContext.Provider value={{ activeTab, setActiveTab }}>
-      <div className="App">
+    <div className="App">
         <Header />
-        <section className="hero-section">
-          <VideoBackground />
-        </section>
-        
-        <section className="content-section">
-          <Tabs />
-        </section>
-        
-        <Footer />
-      </div>
+      <section className="hero-section">
+        <VideoBackground />
+      </section>
+      
+      <section className="content-section">
+        <Tabs />
+      </section>
+      
+      <Footer />
+    </div>
     </TabContext.Provider>
   );
 }

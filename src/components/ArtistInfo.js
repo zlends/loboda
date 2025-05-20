@@ -81,8 +81,8 @@ const ArtistInfo = () => {
             </blockquote>
             <cite>— LOBODA</cite>
           </div>
-        </div>
-        
+          </div>
+          
         <div className="videos-section">
           <h3>OFFICIAL VIDEOS</h3>
           <div className="videos-container">
@@ -95,8 +95,8 @@ const ArtistInfo = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
-              </div>
-            ))}
+                </div>
+              ))}
           </div>
         </div>
         
