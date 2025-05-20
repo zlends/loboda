@@ -38,7 +38,7 @@ body {
 }
 
 .hero-section {
-  height: calc(100vh - 73px); /* Account for header height with border */
+  height: calc(100vh); /* Account for header height with border */
   position: relative;
   overflow: hidden;
 }

@@ -222,7 +222,10 @@
     padding: 0 30px;
     align-items: center;
     text-align: center;
-    padding-top: 100px;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    right: 0;
   }
   
   .content h1 {
@@ -243,10 +246,8 @@
   
   .mute-button {
     position: absolute;
-    bottom: 150px;
+    top: 20px;
     right: 20px;
-    top: auto;
-    left: auto;
     transform: none;
     width: 60px;
     height: 60px;
@@ -267,41 +268,73 @@
 @media (max-width: 480px) {
   .content {
     padding: 0 20px;
-    padding-top: 100px;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    align-items: center;
+    text-align: center;
   }
   
   .content h1 {
-    font-size: 5rem;
-    letter-spacing: 6.5px;
+    font-size: 5.5rem;
+    letter-spacing: 6px;
+    margin-bottom: 0;
   }
   
   .content h2 {
     font-size: 1.2rem;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.8rem;
   }
   
   .cta-button {
-    padding: 10px 25px;
-    font-size: 0.9rem;
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    letter-spacing: 2.5px;
   }
   
   .mute-button {
-    bottom: 140px;
-    right: 15px;
+    top: 20px;
+    left: auto;
+    right: 20px;
+    transform: none;
     width: 50px;
     height: 50px;
   }
   
+  .mute-button:hover {
+    transform: none;
+  }
+
   .mute-button svg {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 }
 
 @media (max-width: 375px) {
+  .content {
+    bottom: 120px;
+  }
+  
+  .content h1 {
+    font-size: 5rem;
+  }
+  
+  .content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+  }
+  
   .mute-button {
-    bottom: 130px;
+    top: 15px;
     right: 15px;
     width: 45px;
     height: 45px;
@@ -310,32 +343,105 @@
 
 @media (max-width: 428px) { /* iPhone 13 Pro Max width */
   .video-background .react-player {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 100vh;
+    position: absolute;
+    top: 0;
     left: 0;
     transform: none;
+    width: 100% !important;
+    height: 100vh !important;
+    overflow: hidden;
   }
   
   .video-background video {
+    height: 100vh !important;
     width: 100% !important;
-    height: 100% !important;
     object-fit: cover;
   }
   
   .content {
-    padding-top: 100px;
+    padding: 0 20px;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    align-items: center;
+    text-align: center;
   }
   
   .content h1 {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+    font-size: 5.5rem;
+    letter-spacing: 6px;
   }
   
   .content h2 {
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    margin-bottom: 1.8rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* iPhone специфичные стили */
+@media (max-width: 428px) and (-webkit-min-device-pixel-ratio: 2) { 
+  .video-background .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100vh !important;
+    transform: none;
+    overflow: hidden;
+  }
+  
+  .video-background video {
+    height: 100vh !important;
+    width: 100% !important;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .content {
+    padding: 0 20px;
+    position: absolute;
+    bottom: 140px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .content h1 {
+    font-size: 5.8rem;
+    letter-spacing: 6px;
+  }
+  
+  .content h2 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  
+  .mute-button {
+    top: 20px;
+    right: 20px;
+    left: auto;
+    transform: none;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .mute-button:hover,
+  .mute-button:active {
+    transform: none;
+  }
+  
+  .mute-button svg {
+    width: 22px;
+    height: 22px;
   }
 }
 
@@ -362,67 +468,15 @@
     min-height: 100%;
     object-fit: cover;
   }
-}
-
-/* iPhone специфичные стили */
-@media (max-width: 428px) and (-webkit-min-device-pixel-ratio: 2) { 
-  .video-background .react-player {
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: auto !important;
-    height: 100% !important;
-    min-height: 100vh;
-  }
-  
-  .video-background video {
-    position: absolute;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: auto !important;
-    height: 100% !important;
-    object-fit: cover;
-    min-width: 100%;
-  }
-  
-  .overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   
   .content {
-    padding: 0 25px;
-    width: 100%;
-    padding-top: 100px;
-  }
-  
-  .content h1 {
-    font-size: 2.8rem;
-    letter-spacing: 2px;
-  }
-  
-  .content h2 {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-  }
-  
-  .mute-button {
-    bottom: 140px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    opacity: 0.9;
-  }
-  
-  .mute-button:hover,
-  .mute-button:active {
-    opacity: 1;
-  }
-  
-  .mute-button svg {
-    width: 16px;
-    height: 16px;
+    padding: 0 20px;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    align-items: center;
+    text-align: center;
   }
 } 
