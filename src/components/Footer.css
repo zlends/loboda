@@ -4,6 +4,7 @@
   padding: 80px 20px 20px;
   position: relative;
   overflow: hidden;
+  z-index: -10;
 }
 
 .footer::before {

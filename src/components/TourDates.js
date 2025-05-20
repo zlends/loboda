@@ -176,13 +176,13 @@ const TourDates = () => {
             ) : (
               <div className="tickets-not-available">
                 <span className="coming-soon-label">{t.tourDates.comingSoon}</span>
-                {/* <button 
+                <button 
                   onClick={openSubscriptionForm}
                   className="notify-me-btn"
                   title="Get notified when tickets are available"
                 >
                   {t.tourDates.notifyMe}
-                </button> */}
+                </button>
               </div>
             )}
           </div>
@@ -212,13 +212,13 @@ const TourDates = () => {
             ) : (
               <div className="tickets-not-available">
                 <span className="coming-soon-label">{t.tourDates.comingSoon}</span>
-                <button 
+                {/* <button 
                   onClick={openSubscriptionForm}
                   className="notify-me-btn"
                   title="Get notified when tickets are available"
                 >
                   {t.tourDates.notifyMe}
-                </button>
+                </button> */}
               </div>
             )}
           </div>
