@@ -195,4 +195,55 @@
   .nav-link {
     font-size: 0.8rem;
   }
+}
+
+/* Add styles for the header language selector */
+.header-language-selector {
+  margin-left: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-language-selector .language-btn {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin: 0 2px;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.header-language-selector .language-btn:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header-language-selector .language-btn.active {
+  opacity: 1;
+  font-weight: 700;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* RTL support for header */
+[dir="rtl"] .header-language-selector {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+/* Mobile responsiveness for language selector */
+@media (max-width: 768px) {
+  .header-language-selector {
+    margin-left: 10px;
+  }
+  
+  .header-language-selector .language-btn {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+  
+  [dir="rtl"] .header-language-selector {
+    margin-right: 10px;
+  }
 } 

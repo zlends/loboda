@@ -1,8 +1,12 @@
 import React from 'react';
 import './Header.css';
 import logo from '../assets/images/BIG LIFE_LOGO-02.svg';
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Header = () => {
+  const { t } = useLanguage();
+  
   // Cities from the tour for the ticker
   const tourCities = [
     'Tel-Aviv', 'Haifa', 'Hamburg', 'Munich', 
@@ -30,8 +34,9 @@ const Header = () => {
         </div>
         
         <nav className="header-nav">
-          <a href="#tour-dates" className="nav-link">Tour</a>
-          <a href="#tabs-section" className="nav-link">Info</a>
+          <a href="#tour-dates" className="nav-link">{t.header.tour}</a>
+          <a href="#tabs-section" className="nav-link">{t.header.info}</a>
+          <LanguageSelector className="header-language-selector" />
         </nav>
       </div>
     </header>

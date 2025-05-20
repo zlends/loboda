@@ -3,9 +3,11 @@ import TourDates from './TourDates';
 import ArtistInfo from './ArtistInfo';
 import './Tabs.css';
 import { TabContext } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Tabs = () => {
   const { activeTab, setActiveTab } = useContext(TabContext);
+  const { t } = useLanguage();
 
   return (
     <div className="tabs-container" id="tabs-section">
@@ -14,13 +16,13 @@ const Tabs = () => {
           className={`tab ${activeTab === 'tourDates' ? 'active' : ''}`}
           onClick={() => setActiveTab('tourDates')}
         >
-          TOUR DATES
+          {t.tabs.tourDates}
         </button>
         <button 
           className={`tab ${activeTab === 'artistInfo' ? 'active' : ''}`}
           onClick={() => setActiveTab('artistInfo')}
         >
-          ARTIST INFO
+          {t.tabs.artistInfo}
         </button>
       </div>
       

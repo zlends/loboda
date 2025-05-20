@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './ArtistInfo.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ArtistInfo = () => {
-  const [artistStats, setArtistStats] = useState([
-    { number: '15M+', label: 'Monthly Listeners' },
-    { number: '20+', label: 'Platinum Singles' },
-    { number: '5', label: 'Sold-out Tours' },
-    { number: '12', label: 'Music Awards' }
-  ]);
-  
+  const { t, language } = useLanguage();
   const [isLoading, setIsLoading] = useState(true);
+
+  // Set RTL direction for Hebrew
+  const isRTL = language === 'he';
+  
+  const [artistStats, setArtistStats] = useState([
+    { number: '15M+', label: t.artistInfo.monthlyListeners },
+    { number: '20+', label: t.artistInfo.platinumSingles },
+    { number: '5', label: t.artistInfo.soldOutTours },
+    { number: '12', label: t.artistInfo.musicAwards }
+  ]);
   
   const youtubeVideos = [
     '6gCbAkqMKYg', // LOBODA - VOSKRESENIE
@@ -43,10 +48,10 @@ const ArtistInfo = () => {
           
           // Update stats with real data when available
           setArtistStats([
-            { number: monthlyListeners, label: 'Monthly Listeners' },
-            { number: '20+', label: 'Platinum Singles' },
-            { number: '5', label: 'Sold-out Tours' },
-            { number: '12', label: 'Music Awards' }
+            { number: monthlyListeners, label: t.artistInfo.monthlyListeners },
+            { number: '20+', label: t.artistInfo.platinumSingles },
+            { number: '5', label: t.artistInfo.soldOutTours },
+            { number: '12', label: t.artistInfo.musicAwards }
           ]);
         }
       } catch (error) {
@@ -58,11 +63,11 @@ const ArtistInfo = () => {
     };
     
     fetchArtistStats();
-  }, []);
+  }, [t.artistInfo.monthlyListeners, t.artistInfo.platinumSingles, t.artistInfo.soldOutTours, t.artistInfo.musicAwards]);
 
   return (
-    <div className="artist-info">
-      <h2 className="section-title">ARTIST INFO</h2>
+    <div className="artist-info" dir={isRTL ? 'rtl' : 'ltr'}>
+      <h2 className="section-title">{t.artistInfo.sectionTitle}</h2>
       
       <div className="artist-stats">
         {artistStats.map((item, index) => (
@@ -77,14 +82,14 @@ const ArtistInfo = () => {
         <div className="artist-bio">
           <div className="bio-quote">
             <blockquote>
-              "My music is about freedom, power, and breaking boundaries."
+              {t.artistInfo.quote}
             </blockquote>
             <cite>— LOBODA</cite>
           </div>
           </div>
           
         <div className="videos-section">
-          <h3>OFFICIAL VIDEOS</h3>
+          <h3>{t.artistInfo.officialVideos}</h3>
           <div className="videos-container">
             {youtubeVideos.slice(0, 2).map((videoId, index) => (
               <div key={index} className="youtube-embed">
@@ -101,7 +106,7 @@ const ArtistInfo = () => {
         </div>
         
         <div className="spotify-section">
-          <h3>LATEST TRACKS</h3>
+          <h3>{t.artistInfo.latestTracks}</h3>
           <div className="spotify-container">
             <iframe 
               title="Spotify Embed: LOBODA"
@@ -115,11 +120,11 @@ const ArtistInfo = () => {
             </iframe>
           </div>
           <div className="spotify-note">
-            <p>To enable the Spotify widget, you need to:</p>
+            <p>{t.artistInfo.spotifyNote}</p>
             <ol>
-              <li>Have a Spotify account (free or premium)</li>
-              <li>Allow third-party cookies in your browser</li>
-              <li>Ensure your ad-blocker isn't blocking Spotify embeds</li>
+              {t.artistInfo.spotifyInstructions.map((instruction, index) => (
+                <li key={index}>{instruction}</li>
+              ))}
             </ol>
           </div>
         </div>

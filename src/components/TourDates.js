@@ -4,9 +4,13 @@ import darkPoster from '../assets/images/LO_POSTER_dark.jpg';
 import redPoster from '../assets/images/LO_POSTER_red.jpg';
 import darkPosterFull from '../assets/images/LO_POSTER_dark.jpg';
 import redPosterFull from '../assets/images/LO_POSTER_red.jpg';
+import SubscriptionForm from './SubscriptionForm';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const TourDates = () => {
+  const { t, language } = useLanguage();
   const [fullscreenPoster, setFullscreenPoster] = useState(null);
+  const [showSubscription, setShowSubscription] = useState(false);
   
   const openFullscreenPoster = (poster) => {
     setFullscreenPoster(poster);
@@ -15,6 +19,16 @@ const TourDates = () => {
   
   const closeFullscreenPoster = () => {
     setFullscreenPoster(null);
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  };
+  
+  const openSubscriptionForm = () => {
+    setShowSubscription(true);
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  };
+  
+  const closeSubscriptionForm = () => {
+    setShowSubscription(false);
     document.body.style.overflow = 'auto'; // Restore scrolling
   };
 
@@ -85,8 +99,11 @@ const TourDates = () => {
     }
   ];
 
+  // Set RTL direction for Hebrew
+  const isRTL = language === 'he';
+
   return (
-    <div className="tour-dates" id="tour-dates">
+    <div className="tour-dates" id="tour-dates" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="poster-header">
         <div className="poster-images">
           <div className="poster-container">
@@ -124,27 +141,39 @@ const TourDates = () => {
             </div>
           </div>
         </div>
-        <h2 className="section-title">TOUR DATES</h2>
-        <p className="poster-subtitle">Official Tour 2025</p>
+        <h2 className="section-title">{t.tourDates.sectionTitle}</h2>
+        <p className="poster-subtitle">{t.tourDates.subtitle}</p>
       </div>
       
       <div className="tour-list">
         {tourDates.map((tour, index) => (
           <div key={index} className={`tour-item ${index % 2 === 0 ? 'dark-poster' : 'red-poster'}`}>
             <div className="poster-overlay"></div>
-            <div className="tour-date">{tour.date}</div>
-            <div className="tour-location">
-              <div className="venue">{tour.venue}</div>
-              <div className="city-country">{tour.city}, {tour.country}</div>
+            <div className="tour-info">
+              <div className="tour-date">
+                <div>{tour.date}</div>
+                <div className="start-time">{t.tourDates.startTime}</div>
+              </div>
+              <div className="tour-location">
+                <div className="venue">{tour.venue}</div>
+                <div className="city-country">{tour.city}, {tour.country}</div>
+              </div>
             </div>
             {tour.ticketsAvailable ? (
-            <a href={tour.ticketLink} target="_blank" rel="noopener noreferrer" className="buy-tickets-btn">
-              Buy Tickets
-            </a>
+              <a href={tour.ticketLink} target="_blank" rel="noopener noreferrer" className="buy-tickets-btn">
+                {t.tourDates.buyTickets}
+              </a>
             ) : (
-              <span className="buy-tickets-btn disabled" title="Tickets will be available soon">
-                Coming Soon
-              </span>
+              <div className="tickets-not-available">
+                <span className="coming-soon-label">{t.tourDates.comingSoon}</span>
+                <button 
+                  onClick={openSubscriptionForm}
+                  className="notify-me-btn"
+                  title="Get notified when tickets are available"
+                >
+                  {t.tourDates.notifyMe}
+                </button>
+              </div>
             )}
           </div>
         ))}
@@ -166,6 +195,12 @@ const TourDates = () => {
             />
           </div>
         </div>
+      )}
+
+      {showSubscription && (
+        <SubscriptionForm 
+          onClose={closeSubscriptionForm}
+        />
       )}
     </div>
   );
