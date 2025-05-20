@@ -154,7 +154,7 @@ const TourDates = () => {
       <div className="tour-list">
         {/* Israel section */}
         <div ref={israelSectionRef} className="tour-section-heading">
-          <h3>ISRAEL</h3>
+          <h3>{t.tourDates.israelSection}</h3>
         </div>
         {tourDates.slice(0, 2).map((tour, index) => (
           <div key={index} className="tour-item red-poster">
@@ -190,7 +190,7 @@ const TourDates = () => {
         
         {/* Europe section */}
         <div ref={europeSectionRef} className="tour-section-heading">
-          <h3>EUROPE</h3>
+          <h3>{t.tourDates.europeSection}</h3>
         </div>
         {tourDates.slice(2).map((tour, index) => (
           <div key={index + 2} className="tour-item dark-poster">

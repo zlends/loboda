@@ -43,6 +43,10 @@ export const LanguageProvider = ({ children }) => {
         tour: "Tour",
         info: "Info"
       },
+      video: {
+        muteBtn: "Mute video",
+        unmuteBtn: "Unmute video"
+      },
       tabs: {
         tourDates: "TOUR DATES",
         artistInfo: "ARTIST INFO"
@@ -51,9 +55,12 @@ export const LanguageProvider = ({ children }) => {
         sectionTitle: "TOUR DATES",
         subtitle: "Official Tour 2025",
         buyTickets: "Buy Tickets",
+        buyTicketsTitle: "Scroll to Tour Dates",
         comingSoon: "Coming Soon",
         notifyMe: "Notify Me",
-        startTime: "START 20:00"
+        startTime: "START 20:00",
+        israelSection: "ISRAEL",
+        europeSection: "EUROPE"
       },
       artistInfo: {
         sectionTitle: "ARTIST INFO",
@@ -107,6 +114,10 @@ export const LanguageProvider = ({ children }) => {
         tour: "Тур",
         info: "Інфо"
       },
+      video: {
+        muteBtn: "Придушити відео",
+        unmuteBtn: "Відпустити відео"
+      },
       tabs: {
         tourDates: "ДАТИ ТУРНЕ",
         artistInfo: "ПРО АРТИСТА"
@@ -115,9 +126,12 @@ export const LanguageProvider = ({ children }) => {
         sectionTitle: "ДАТИ ТУРНЕ",
         subtitle: "Офіційний Тур 2025",
         buyTickets: "Купити Квитки",
+        buyTicketsTitle: "Прокрутіть до дат туру",
         comingSoon: "Незабаром",
         notifyMe: "Сповістити мене",
-        startTime: "ПОЧАТОК 20:00"
+        startTime: "ПОЧАТОК 20:00",
+        israelSection: "ІЗРАЇЛЬ",
+        europeSection: "ЄВРОПА"
       },
       artistInfo: {
         sectionTitle: "ПРО АРТИСТА",
@@ -171,6 +185,10 @@ export const LanguageProvider = ({ children }) => {
         tour: "Тур",
         info: "Инфо"
       },
+      video: {
+        muteBtn: "Приглушить видео",
+        unmuteBtn: "Вернуть звук"
+      },
       tabs: {
         tourDates: "ДАТЫ ТУРА",
         artistInfo: "ОБ АРТИСТЕ"
@@ -179,9 +197,12 @@ export const LanguageProvider = ({ children }) => {
         sectionTitle: "ДАТЫ ТУРА",
         subtitle: "Официальный Тур 2025",
         buyTickets: "Купить Билеты",
+        buyTicketsTitle: "Прокрутите к датам тура",
         comingSoon: "Скоро",
         notifyMe: "Уведомить меня",
-        startTime: "НАЧАЛО 20:00"
+        startTime: "НАЧАЛО 20:00",
+        israelSection: "ИЗРАИЛЬ",
+        europeSection: "ЕВРОПА"
       },
       artistInfo: {
         sectionTitle: "ОБ АРТИСТЕ",
@@ -235,6 +256,10 @@ export const LanguageProvider = ({ children }) => {
         tour: "סיבוב הופעות",
         info: "מידע"
       },
+      video: {
+        muteBtn: "השתק וידאו",
+        unmuteBtn: "הפעל וידאו"
+      },
       tabs: {
         tourDates: "תאריכי הופעות",
         artistInfo: "מידע על האמן"
@@ -243,9 +268,12 @@ export const LanguageProvider = ({ children }) => {
         sectionTitle: "תאריכי הופעות",
         subtitle: "סיבוב הופעות רשמי 2025",
         buyTickets: "רכישת כרטיסים",
+        buyTicketsTitle: "סקרינו לתאריכי הופעות",
         comingSoon: "בקרוב",
         notifyMe: "עדכנו אותי",
-        startTime: "התחלה 20:00"
+        startTime: "התחלה 20:00",
+        israelSection: "ישראל",
+        europeSection: "אירופה"
       },
       artistInfo: {
         sectionTitle: "מידע על האמן",

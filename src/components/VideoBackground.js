@@ -111,7 +111,7 @@ const VideoBackground = () => {
             onClick={scrollToTourDates}
             role="button"
             tabIndex={0}
-            title="Scroll to Tour Dates"
+            title={t.tourDates.buyTicketsTitle}
           >
             {t.tourDates.buyTickets}
           </button>
@@ -119,8 +119,8 @@ const VideoBackground = () => {
         <div 
           className="mute-button" 
           onClick={toggleMute} 
-          aria-label={muted ? "Unmute video" : "Mute video"}
-          title={muted ? "Unmute video" : "Mute video"}
+          aria-label={muted ? t.video.unmuteBtn : t.video.muteBtn}
+          title={muted ? t.video.unmuteBtn : t.video.muteBtn}
           role="button"
           tabIndex={0}
           onKeyPress={(e) => {
