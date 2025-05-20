@@ -35,7 +35,6 @@ const Header = () => {
         
         <nav className="header-nav">
           <a href="#tour-dates" className="nav-link">{t.header.tour}</a>
-          <a href="#tabs-section" className="nav-link">{t.header.info}</a>
           <LanguageSelector className="header-language-selector" />
         </nav>
       </div>
