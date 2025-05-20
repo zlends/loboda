@@ -6,10 +6,13 @@ import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Header = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
-  const [menuPosition, setMenuPosition] = useState({ top: 0, right: 0 });
+  const [menuPosition, setMenuPosition] = useState({ top: 0, right: 0, left: 'auto' });
   const [menuPortalElement, setMenuPortalElement] = useState(null);
+  
+  // Проверка на RTL
+  const isRTL = language === 'he';
   
   // Cities from the tour for the ticker
   const tourCities = [
@@ -35,10 +38,23 @@ const Header = () => {
     } else {
       // Calculate position of the dropdown menu
       const buttonRect = e.currentTarget.getBoundingClientRect();
-      setMenuPosition({
-        top: buttonRect.bottom + window.scrollY,
-        right: window.innerWidth - buttonRect.right
-      });
+      
+      if (isRTL) {
+        // Для RTL позиционируем по левому краю кнопки
+        setMenuPosition({
+          top: buttonRect.bottom + window.scrollY,
+          left: buttonRect.left,
+          right: 'auto'
+        });
+      } else {
+        // Для LTR используем правый край кнопки
+        setMenuPosition({
+          top: buttonRect.bottom + window.scrollY,
+          right: window.innerWidth - buttonRect.right,
+          left: 'auto'
+        });
+      }
+      
       setShowLanguageMenu(true);
     }
   };
@@ -58,7 +74,7 @@ const Header = () => {
   }, [showLanguageMenu]);
   
   return (
-    <header className="header">
+    <header className="header" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="header-container">
         <div className="logo-container">
           <img src={logo} alt="LOBODA Tour Logo" className="header-logo" />
@@ -66,7 +82,7 @@ const Header = () => {
         
         <div className="ticker-container">
           <div className="ticker">
-            <div className="ticker-content">
+            <div className={`ticker-content ${isRTL ? 'rtl-ticker' : ''}`}>
               {/* Repeat the cities twice to create seamless loop */}
               {[...tourCities, ...tourCities].map((city, index) => (
                 <span key={index} className="ticker-item">
@@ -96,7 +112,8 @@ const Header = () => {
                 style={{
                   position: 'absolute',
                   top: `${menuPosition.top}px`,
-                  right: `${menuPosition.right}px`,
+                  right: menuPosition.right !== 'auto' ? `${menuPosition.right}px` : 'auto',
+                  left: menuPosition.left !== 'auto' ? `${menuPosition.left}px` : 'auto',
                   zIndex: 9999
                 }}
               >

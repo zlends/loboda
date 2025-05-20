@@ -82,6 +82,22 @@
   padding-left: 100%;
 }
 
+/* RTL анимация карусели */
+.rtl-ticker {
+  animation: ticker-rtl 30s linear infinite;
+  padding-right: 100%;
+  padding-left: 0;
+}
+
+@keyframes ticker-rtl {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(50%, 0, 0);
+  }
+}
+
 .ticker-item {
   display: inline-block;
   margin: 0 10px;
@@ -104,6 +120,19 @@
   100% {
     transform: translate3d(-50%, 0, 0);
   }
+}
+
+/* Дополнительные стили для RTL совместимости */
+[dir="rtl"] .ticker-container::before {
+  left: auto;
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+}
+
+[dir="rtl"] .ticker-container::after {
+  right: auto;
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
 }
 
 .header-nav {
@@ -138,6 +167,16 @@
 }
 
 .nav-link:hover::after {
+  width: 100%;
+}
+
+/* RTL совместимость для навигационных ссылок */
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .nav-link:hover::after {
   width: 100%;
 }
 
@@ -357,4 +396,5 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   min-width: 120px;
   animation: fadeIn 0.2s ease-out;
+  max-width: 90vw; /* Предотвращаем выход за границы экрана */
 } 
