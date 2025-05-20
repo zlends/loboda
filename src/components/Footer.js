@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className="footer" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="footer-container">
         <div className="footer-section">
-          <h3>LOBODA</h3>
+          <h3 className="loboda-brand">LOBODA</h3>
           <p>{t.footer.tour}</p>
         </div>
         
