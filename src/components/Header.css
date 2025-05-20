@@ -246,4 +246,115 @@
   [dir="rtl"] .header-language-selector {
     margin-right: 10px;
   }
+}
+
+/* Add styles for the language dropdown */
+.language-dropdown {
+  position: relative;
+  z-index: 9999;
+}
+
+.language-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.language-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.language-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 5px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  min-width: 120px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.compact-language-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.compact-language-selector .language-btn {
+  width: 100%;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  background: transparent;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.compact-language-selector .language-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.compact-language-selector .language-btn.active {
+  background: #e91e63;
+  font-weight: bold;
+}
+
+/* RTL support for the language dropdown */
+[dir="rtl"] .language-menu {
+  right: auto;
+  left: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .language-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .language-menu {
+    min-width: 100px;
+    padding: 5px;
+  }
+  
+  .compact-language-selector .language-btn {
+    padding: 5px 6px;
+    font-size: 12px;
+  }
+}
+
+.language-menu-portal {
+  background-color: #222;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  min-width: 120px;
+  animation: fadeIn 0.2s ease-out;
 } 

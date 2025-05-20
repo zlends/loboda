@@ -1,13 +1,17 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import ReactPlayer from 'react-player';
 import './VideoBackground.css';
-import videoFile from '../assets/videos/LOBODA_FullHD_sound.mp4';
+import videoFileEN from '../assets/videos/LOBODA_FullHD_sound.mp4';
+import videoFileUA from '../assets/videos/Site_Loboda_promo2.mp4';
+import videoFileHE from '../assets/videos/Site_Loboda_promo3.mp4';
 import { TabContext } from '../App';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const VideoBackground = () => {
   const [muted, setMuted] = useState(true);
   const playerRef = useRef(null);
   const { setActiveTab } = useContext(TabContext);
+  const { t, language } = useLanguage();
 
   const toggleMute = () => {
     console.log("Toggle mute clicked, current state:", muted);
@@ -18,6 +22,20 @@ const VideoBackground = () => {
   useEffect(() => {
     console.log("Muted state changed to:", muted);
   }, [muted]);
+  
+  // Get the correct video file based on language
+  const getVideoFile = () => {
+    switch(language) {
+      case 'ua':
+        return videoFileUA;
+      case 'he':
+        return videoFileHE;
+      case 'en':
+      case 'ru':
+      default:
+        return videoFileEN;
+    }
+  };
   
   const scrollToTourDates = (e) => {
     // Prevent any default behavior
@@ -62,7 +80,7 @@ const VideoBackground = () => {
       <ReactPlayer
         ref={playerRef}
         className="react-player"
-        url={videoFile}
+        url={getVideoFile()}
         playing={true}
         loop={true}
         muted={muted}
@@ -95,7 +113,7 @@ const VideoBackground = () => {
             tabIndex={0}
             title="Scroll to Tour Dates"
           >
-            BUY TICKETS
+            {t.tourDates.buyTickets}
           </button>
         </div>
         <div 

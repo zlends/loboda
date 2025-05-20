@@ -18,7 +18,7 @@ const Footer = () => {
         
         <div className="footer-section">
           <h4>{t.footer.contact}</h4>
-          <p>Email: <a href="mailto:info@big-life.org">info@big-life.org</a></p>
+          <p>Email: <a href="mailto:info@big-life.org" className="footer-email">info@big-life.org</a></p>
         </div>
         
         <div className="footer-section">

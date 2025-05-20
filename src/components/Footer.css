@@ -195,4 +195,32 @@
     width: 40px;
     height: 40px;
   }
+}
+
+.footer-email {
+  color: #e91e63;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-email::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, #e91e63, #9c27b0);
+  transition: width 0.3s ease;
+}
+
+.footer-email:hover {
+  color: #f48fb1;
+}
+
+.footer-email:hover::after {
+  width: 100%;
 } 
