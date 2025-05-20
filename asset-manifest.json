@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/loboda/static/css/main.f77aeceb.css",
-    "main.js": "/loboda/static/js/main.e47e407f.js",
+    "main.css": "/loboda/static/css/main.a1797c3c.css",
+    "main.js": "/loboda/static/js/main.ea8c7bd5.js",
     "reactPlayerYouTube.js": "/loboda/static/js/reactPlayerYouTube.81598030.chunk.js",
     "reactPlayerSoundCloud.js": "/loboda/static/js/reactPlayerSoundCloud.bf40802d.chunk.js",
     "reactPlayerVimeo.js": "/loboda/static/js/reactPlayerVimeo.2cf6d162.chunk.js",
@@ -27,8 +27,8 @@
     "static/media/Attentica_4F_UltraLight.otf": "/loboda/static/media/Attentica_4F_UltraLight.7faee3792aa892e6e6e0.otf",
     "static/media/BIG LIFE_LOGO-02.svg": "/loboda/static/media/BIG LIFE_LOGO-02.26cd866ad1f9a863339a0b87a36a1d24.svg",
     "index.html": "/loboda/index.html",
-    "main.f77aeceb.css.map": "/loboda/static/css/main.f77aeceb.css.map",
-    "main.e47e407f.js.map": "/loboda/static/js/main.e47e407f.js.map",
+    "main.a1797c3c.css.map": "/loboda/static/css/main.a1797c3c.css.map",
+    "main.ea8c7bd5.js.map": "/loboda/static/js/main.ea8c7bd5.js.map",
     "reactPlayerYouTube.81598030.chunk.js.map": "/loboda/static/js/reactPlayerYouTube.81598030.chunk.js.map",
     "reactPlayerSoundCloud.bf40802d.chunk.js.map": "/loboda/static/js/reactPlayerSoundCloud.bf40802d.chunk.js.map",
     "reactPlayerVimeo.2cf6d162.chunk.js.map": "/loboda/static/js/reactPlayerVimeo.2cf6d162.chunk.js.map",
@@ -46,7 +46,7 @@
     "453.7ddb8f82.chunk.js.map": "/loboda/static/js/453.7ddb8f82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f77aeceb.css",
-    "static/js/main.e47e407f.js"
+    "static/css/main.a1797c3c.css",
+    "static/js/main.ea8c7bd5.js"
   ]
 }
