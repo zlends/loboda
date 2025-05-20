@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './TourDates.css';
-import darkPoster from '../assets/images/LO_POSTER_dark.jpg';
 import redPoster from '../assets/images/LO_POSTER_red.jpg';
-import darkPosterFull from '../assets/images/LO_POSTER_dark.jpg';
+import darkPoster from '../assets/images/LO_POSTER_dark.jpg';
 import redPosterFull from '../assets/images/LO_POSTER_red.jpg';
+import darkPosterFull from '../assets/images/LO_POSTER_dark.jpg';
 import SubscriptionForm from './SubscriptionForm';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -11,6 +11,28 @@ const TourDates = () => {
   const { t, language } = useLanguage();
   const [fullscreenPoster, setFullscreenPoster] = useState(null);
   const [showSubscription, setShowSubscription] = useState(false);
+  
+  // Create refs for Israel and Europe sections
+  const israelSectionRef = useRef(null);
+  const europeSectionRef = useRef(null);
+  
+  const scrollToIsrael = () => {
+    if (israelSectionRef.current) {
+      israelSectionRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+  
+  const scrollToEurope = () => {
+    if (europeSectionRef.current) {
+      europeSectionRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
   
   const openFullscreenPoster = (poster) => {
     setFullscreenPoster(poster);
@@ -109,36 +131,20 @@ const TourDates = () => {
           <div className="poster-container">
             <div className="poster-tape"></div>
             <img 
-              src={darkPoster} 
-              alt="LOBODA Tour 2025 Poster" 
+              src={redPoster} 
+              alt="LOBODA Tour 2025 Israel Poster" 
               className="poster-image poster-dark" 
-              onClick={() => openFullscreenPoster(darkPosterFull)}
+              onClick={scrollToIsrael}
             />
-            <div className="poster-zoom-hint">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                <line x1="11" y1="8" x2="11" y2="14"></line>
-                <line x1="8" y1="11" x2="14" y2="11"></line>
-              </svg>
-            </div>
           </div>
           <div className="poster-container">
             <div className="poster-tape"></div>
             <img 
-              src={redPoster} 
-              alt="LOBODA Tour 2025 Poster" 
+              src={darkPoster} 
+              alt="LOBODA Tour 2025 Europe Poster" 
               className="poster-image poster-red" 
-              onClick={() => openFullscreenPoster(redPosterFull)}
+              onClick={scrollToEurope}
             />
-            <div className="poster-zoom-hint">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                <line x1="11" y1="8" x2="11" y2="14"></line>
-                <line x1="8" y1="11" x2="14" y2="11"></line>
-              </svg>
-            </div>
           </div>
         </div>
         <h2 className="section-title">{t.tourDates.sectionTitle}</h2>
@@ -146,8 +152,48 @@ const TourDates = () => {
       </div>
       
       <div className="tour-list">
-        {tourDates.map((tour, index) => (
-          <div key={index} className={`tour-item ${index % 2 === 0 ? 'dark-poster' : 'red-poster'}`}>
+        {/* Israel section */}
+        <div ref={israelSectionRef} className="tour-section-heading">
+          <h3>ISRAEL</h3>
+        </div>
+        {tourDates.slice(0, 2).map((tour, index) => (
+          <div key={index} className="tour-item red-poster">
+            <div className="poster-overlay"></div>
+            <div className="tour-info">
+              <div className="tour-date">
+                <div>{tour.date}</div>
+                <div className="start-time">{t.tourDates.startTime}</div>
+              </div>
+              <div className="tour-location">
+                <div className="venue">{tour.venue}</div>
+                <div className="city-country">{tour.city}, {tour.country}</div>
+              </div>
+            </div>
+            {tour.ticketsAvailable ? (
+              <a href={tour.ticketLink} target="_blank" rel="noopener noreferrer" className="buy-tickets-btn">
+                {t.tourDates.buyTickets}
+              </a>
+            ) : (
+              <div className="tickets-not-available">
+                <span className="coming-soon-label">{t.tourDates.comingSoon}</span>
+                <button 
+                  onClick={openSubscriptionForm}
+                  className="notify-me-btn"
+                  title="Get notified when tickets are available"
+                >
+                  {t.tourDates.notifyMe}
+                </button>
+              </div>
+            )}
+          </div>
+        ))}
+        
+        {/* Europe section */}
+        <div ref={europeSectionRef} className="tour-section-heading">
+          <h3>EUROPE</h3>
+        </div>
+        {tourDates.slice(2).map((tour, index) => (
+          <div key={index + 2} className="tour-item dark-poster">
             <div className="poster-overlay"></div>
             <div className="tour-info">
               <div className="tour-date">

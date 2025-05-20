@@ -318,8 +318,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10;
   backdrop-filter: blur(2px);
   color: white;
@@ -327,6 +327,7 @@
 
 .poster-container:hover .poster-zoom-hint {
   opacity: 1;
+  transform: translateY(5px);
 }
 
 .poster-zoom-hint svg {
@@ -676,4 +677,49 @@
 [dir="rtl"] .notify-me-btn::before {
   margin-right: 0;
   margin-left: 8px;
+}
+
+.tour-section-heading {
+  margin: 40px 0 20px;
+  position: relative;
+  text-align: center;
+}
+
+.tour-section-heading h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #333;
+  display: inline-block;
+  position: relative;
+  padding: 0 30px;
+}
+
+.tour-section-heading h3::before,
+.tour-section-heading h3::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #e91e63, #9c27b0);
+}
+
+.tour-section-heading h3::before {
+  left: -15px;
+}
+
+.tour-section-heading h3::after {
+  right: -15px;
+}
+
+/* RTL support for section headings */
+[dir="rtl"] .tour-section-heading h3::before {
+  left: auto;
+  right: -15px;
+}
+
+[dir="rtl"] .tour-section-heading h3::after {
+  right: auto;
+  left: -15px;
 } 
